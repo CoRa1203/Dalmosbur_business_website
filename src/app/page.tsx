@@ -1,11 +1,8 @@
-import PhoneIcon from "@/components/common/iconText";
+import Main from "@/pages/mainPage";
+
 
 export default function Home() {
   return (
-    <div className="">
-      <main className="">
-        <p>kjgfkghg</p>
-      </main>
-    </div>
+        <Main/>
   );
 }

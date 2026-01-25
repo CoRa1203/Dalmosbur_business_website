@@ -3,10 +3,11 @@
 @theme {
   --primary-black: #020b16;
   --primary-black-50: rgba(2, 11, 22, 0.5);
+  --primary-black-80: rgba(2, 11, 22, 0.8);
   --primary-white: #ffffff;
   --primary-blue: #0f2a4d;
   --primary-blue-hover: #194d8f;
-  --primary-grey: #4a4c4e;
+  --primary-grey: #6B6D70;
   --secondary-accent: #c05a02;
   --secondary-accent-hover: #e97610;
   --secondary-red: #b5291c;
@@ -129,6 +130,9 @@ body {
   .pt-fluid-3xlarge {
     padding-top: clamp(3rem, 4vw, 4rem);
   }
+    .pt-fluid-4xlarge {
+    padding-top: clamp(4.75rem, 5vw, 6rem);
+  }
 
   /* padding-right */
   .pr-fluid-xs {
@@ -201,6 +205,9 @@ body {
   .pl-fluid-3xlarge {
     padding-left: clamp(3rem, 4vw, 4rem);
   }
+  .pl-fluid-4xlarge {
+    padding-left: clamp(4.75rem, 5vw, 6rem);
+  }
 
   /* padding-x (left + right) */
   .px-fluid-xs {
@@ -223,6 +230,9 @@ body {
   }
   .px-fluid-3xlarge {
     padding-inline: clamp(3rem, 4vw, 4rem);
+  }
+  .px-fluid-4xlarge {
+    padding-inline: clamp(4.75rem, 5vw, 6rem);
   }
 
   /* padding-y (top + bottom) */
@@ -247,6 +257,61 @@ body {
   .py-fluid-3xlarge {
     padding-block: clamp(3rem, 4vw, 4rem);
   }
+  .py-fluid-4xlarge {
+    padding-block: clamp(4.75rem, 5vw, 6rem);
+  }
+
+  /* Fluid margin-y (top + bottom) */
+  .mb-fluid-xs {
+    margin-block: min(0.25rem, max(0.125rem, 1vw));
+  }
+  .mb-fluid-small {
+    margin-block: clamp(0.25rem, 1vw, 0.5rem); /* 4px → 8px */
+  }
+  .mb-fluid-medium {
+    margin-block: clamp(0.5rem, 1.5vw, 1rem); /* 8px → 16px */
+  }
+  .mb-fluid-large {
+    margin-block: clamp(0.75rem, 2vw, 1.5rem); /* 12px → 24px */
+  }
+  .mb-fluid-xlarge {
+    margin-block: clamp(1rem, 2.5vw, 2rem); /* 16px → 32px */
+  }
+  .mb-fluid-2xlarge {
+    margin-block: clamp(1.5rem, 3vw, 3rem); /* 24px → 48px */
+  }
+  .mb-fluid-3xlarge {
+    margin-block: clamp(2rem, 4vw, 5rem); /* 32px → 80px */
+  }
+  .mb-fluid-4xlarge {
+    margin-block: clamp(3rem, 5vw, 10rem); /* 48px → 160px*/
+  }
+
+  /*m top*/
+    .mt-fluid-xs {
+    margin-top: min(0.25rem, max(0.125rem, 1vw));
+  }
+  .mt-fluid-small {
+    margin-top: clamp(0.25rem, 1vw, 0.5rem); /* 4px → 8px */
+  }
+  .mt-fluid-medium {
+    margin-top: clamp(0.5rem, 1.5vw, 1rem); /* 8px → 16px */
+  }
+  .mt-fluid-large {
+    margin-top: clamp(0.75rem, 2vw, 1.5rem); /* 12px → 24px */
+  }
+  .mt-fluid-xlarge {
+    margin-top: clamp(1rem, 2.5vw, 2rem); /* 16px → 32px */
+  }
+  .mt-fluid-2xlarge {
+    margin-top: clamp(1.5rem, 3vw, 3rem); /* 24px → 48px */
+  }
+  .mt-fluid-3xlarge {
+    margin-top: clamp(2rem, 4vw, 5rem); /* 32px → 80px */
+  }
+  .mt-fluid-4xlarge {
+    margin-top: clamp(3rem, 6.5vw, 10rem); /* 48px → 160px*/
+  }
 
   /*  Fluid gap  */
   .gap-fluid-xs {
@@ -270,6 +335,12 @@ body {
   .gap-fluid-3xlarge {
     gap: clamp(3rem, 4vw, 4rem);
   } /*48px*/
+  .gap-fluid-4xlarge {
+    gap: clamp(3rem, 5vw, 10rem); /* 48px → 160px*/
+  }
+   .gap-fluid-5xlarge {
+    gap: clamp(4rem, 10vw, 15rem); /* 48px → 160px*/
+  }
 
   /*  Fluid border-radius  */
   .rounded-fluid-xsm {
@@ -288,15 +359,18 @@ body {
   /* Адаптивная сетка: 4 - 2 - 1 колонка */
   .grid-cols-fluid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(1fr));
     gap: var(--gap, clamp(0.5rem, 1.5vw, 1rem));
   }
 
+  .transition {
+    @apply duration-500 ease-in-out;
+    }
+    
+    /*
   .element-hover:hover {
     @apply text-[var(--primary-blue-hover)];
-  }
-
-
+  } */
 
   @media (min-width: 768px) {
     .grid-cols-fluid {
@@ -309,6 +383,4 @@ body {
       grid-template-columns: repeat(4, 1fr);
     }
   }
-
-
 }
