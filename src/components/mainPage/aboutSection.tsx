@@ -3,7 +3,7 @@ import Header2 from "../UI/header2";
 
 export default function AboutSection() {
     return <SectionContainer>
-        <Header2 title="о нас" header="Дальмосбур" btnText="Подробнее" />
+        <Header2 title="о нас" header="Дальмосбур" btnText="Подробнее" href="/aboutUs"/>
         <div className="flex flex-col gap-fluid-large">
             <div>
                 <p>ООО «Дальмосбур» основано в 2018 году как предприятие, ориентированное на оказание высокотехнологичных услуг в сфере горных работ. За годы деятельности мы выросли из небольшой бригады в компанию с собственным парком техники и штатом сертифицированных специалистов.

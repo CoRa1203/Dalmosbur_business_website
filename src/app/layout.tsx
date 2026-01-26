@@ -22,16 +22,16 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
 
-  
+
   return (
-    <html lang="en">
-      <body className={`flex flex-col ${roboto.variable}`}>
-        
-        <Header/>
-          <main className="flex justify-center grow">
-        {children}
+    <html lang="en" >
+      <body className={`flex flex-col min-h-screen ${roboto.variable}`}>
+
+        <Header />
+        <main className="flex justify-center">
+          {children}
         </main>
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

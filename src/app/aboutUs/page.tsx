@@ -1,5 +1,5 @@
-import AboutUs from "@/pages/aboutUsPage";
+import AboutUsPage from "@/pages/aboutUsPage";
 
-export default function AboutUsPage(){
-    return <AboutUs/>
+export default function AboutUs(){
+    return <AboutUsPage/>
 }

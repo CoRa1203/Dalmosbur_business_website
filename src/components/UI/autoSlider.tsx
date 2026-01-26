@@ -2,7 +2,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Button from './UI/button';
+import Button from './button';
+
 
 
 interface AutoSliderProps {

@@ -11,15 +11,15 @@ export const TEXTS = [
   },
   {
     title: "Услуги",
-    link: "#",
-  },
-  {
-    title: "Контакты",
-    link: "#",
+    link: "/services",
   },
   {
     title: "Проекты/Объекты",
     link: "/projects",
+  },
+  {
+    title: "Контакты",
+    link: "#",
   },
 ];
 
@@ -48,24 +48,24 @@ export const ADVANTAGES = [
   },
 ];
 
-export const CARDS_PROJECTS = [
-  {
-    image: "/images/severniy.jpg",
-    title: "Карьер „Северный“, Кемеровская область",
-  },
-  {
-    image: "/images/rudnik.jpg",
-    title: "Рудник «Амурский», Хабаровский край",
-  },
-  {
-    image: "/images/otval.jpg",
-    title: "Отвал №5, Свердловская область",
-  },
-  {
-    image: "/images/belogorskiy.jpg",
-    title: "Карьер «Белогорский», Республика Саха (Якутия)",
-  },
-];
+// export const CARDS_PROJECTS = [
+//   {
+//     image: "/images/severniy.jpg",
+//     title: "Карьер „Северный“, Кемеровская область",
+//   },
+//   {
+//     image: "/images/rudnik.jpg",
+//     title: "Рудник «Амурский», Хабаровский край",
+//   },
+//   {
+//     image: "/images/otval.jpg",
+//     title: "Отвал №5, Свердловская область",
+//   },
+//   {
+//     image: "/images/belogorskiy.jpg",
+//     title: "Карьер «Белогорский», Республика Саха (Якутия)",
+//   },
+// ];
 
 export const SERVICES = [
   {

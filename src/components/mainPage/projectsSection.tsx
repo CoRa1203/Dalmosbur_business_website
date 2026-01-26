@@ -6,7 +6,7 @@ import Header2 from "../UI/header2";
 
 export default function ProjectsSection() {
     return <SectionContainer>
-        <Header2 title="Проекты" header="Наши работы на крупнейших объектах" btnText="Все проекты" />
+        <Header2 title="Проекты" header="Наши работы на крупнейших объектах" btnText="Все проекты" href="/projects"/>
         <Cards />
     </SectionContainer>
 }

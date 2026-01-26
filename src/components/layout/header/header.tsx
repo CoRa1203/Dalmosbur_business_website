@@ -5,14 +5,15 @@ import { usePathname } from 'next/navigation';
 import HeaderUpperLayer from './header-upper-layer';
 
 import { SLIDER_IMAGES } from '@/data/data';
-import AutoSlider from '@/components/autoSlider';
+import AutoSlider from '@/components/UI/autoSlider';
+
 
 export default function Header() {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
   
   return (
-    <header className="relative w-full">
+    <header className="relative flex w-full max-h-[112px]">
       <HeaderUpperLayer />
       
       {/* Слайдер только на главной */}
