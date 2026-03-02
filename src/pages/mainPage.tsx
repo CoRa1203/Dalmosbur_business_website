@@ -1,17 +1,17 @@
 import AboutSection from "@/components/mainPage/aboutSection";
 import FeedbackSection from "@/components/mainPage/feedbackSection";
+import Advantages from "@/components/mainPage/advantages";
 import ProjectsSection from "@/components/mainPage/projectsSection";
 import ServicesSection from "@/components/mainPage/servicesSection";
-import AutoSlider from "@/components/UI/autoSlider";
-import { SLIDER_IMAGES } from "@/data/data"
-import Advantages from "@/components/mainPage/advantages";
+import MainBlock from "@/components/mainPage/mainBlock";
+
 
 export default function MainPage() {
     // поменять на секшн контейнер с падингом топ
-    return <div className="flex flex-col items-center justify-center gap-fluid-5xlarge ">
-        <AutoSlider images={SLIDER_IMAGES}></AutoSlider>
-       <Advantages/>
+    return <div className="flex flex-col items-center justify-center">
+       <MainBlock/>
         <AboutSection />
+       <Advantages/>
         <ProjectsSection />
         <ServicesSection />
         <FeedbackSection />

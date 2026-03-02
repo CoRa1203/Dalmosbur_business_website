@@ -5,28 +5,38 @@
   --primary-black-50: rgba(2, 11, 22, 0.5);
   --primary-black-80: rgba(2, 11, 22, 0.8);
   --primary-white: #ffffff;
-  --primary-blue: #0f2a4d;
-  --primary-blue-hover: #194d8f;
-  --primary-grey: #6B6D70;
-  --secondary-accent: #c05a02;
-  --secondary-accent-hover: #e97610;
+  --primary-white-50: rgba(255, 255, 255, 0.5);
+  --primary-white-80: rgba(255, 255, 255, 0.8);
+  --primary-accent: #c05a02;
+  --primary-accent-hover: #e97610;
+  --primary-grey: #6b6d70;
+  --secondary-accent: #0f2a4d;
+  --secondary-accent-hover: #194d8f;
   --secondary-red: #b5291c;
   --secondary-green: #15b12d;
   --secondary-lightGrey: #e1e7ee;
   --secondary-lightBlue: #5e8dcc;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+
 html {
   scroll-behavior: smooth;
-   height: 100%;
+  height: 100%;
   min-height: 100vh;
+
 }
 body {
   background: var(--primary-white);
   color: var(--primary-black);
   font-family: var(--font-roboto), sans-serif;
-
+  font-size: clamp(0.875rem, 1.4vw, 1rem);
 }
+
+
 
 /* @layer base {
   body {
@@ -37,28 +47,34 @@ body {
 
 @layer utilities {
   /*  Fluid типографика */
-  /*  Title */
+  /*60-32 - текст на главной стр*/
   .text-title-3xlarge {
-    font-size: clamp(3rem, 6vw, 3.75rem);
+    font-size: clamp(1.5rem, 3.85vw, 3.75rem);
   }
   .text-title-3xlarge-semiBold {
-    font-size: clamp(3rem, 6vw, 3.75rem);
+    font-size: clamp(1.5rem, 3.85vw, 3.75rem);
     font-weight: 600;
   }
+
+  /*48-24 подзаголовки в секшн*/
   .text-title-2xlarge {
-    font-size: clamp(2.25rem, 4.5vw, 3rem);
+    font-size: clamp(1.5rem, 4.5vw, 3rem);
   }
   .text-title-2xlarge-semiBold {
-    font-size: clamp(2.25rem, 4.5vw, 3rem);
+   font-size: clamp(1.5rem, 4.5vw, 3rem);
     font-weight: 600;
   }
+
+    /*32-16 - подзаголовки карточек услуг и роектов*/
   .text-title-xlarge {
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(1rem, 3vw, 2rem);
   }
   .text-title-xlarge-semiBold {
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(1rem, 3vw, 2rem);
     font-weight: 600;
   }
+
+  /*24-16*/
   .text-title-large {
     font-size: clamp(1rem, 2vw, 1.5rem);
   }
@@ -66,26 +82,31 @@ body {
     font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 600;
   }
+
+   /*18-16*/
   .text-title-medium {
-    font-size: clamp(0.875rem, 1.75vw, 1.125rem);
+    font-size: clamp(1rem, 1.75vw, 1.125rem);
   }
   .text-title-medium-semiBold {
-    font-size: clamp(0.875rem, 1.75vw, 1.125rem);
+    font-size: clamp(1rem, 1.75vw, 1.125rem);
     font-weight: 600;
   }
+
+   /*16-16*/
   .text-title-small {
-    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    font-size: clamp(1rem, 1.5vw, 1rem);
   }
   .text-title-small-semiBold {
-    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    font-size: clamp(1rem, 1.5vw, 1rem);
     font-weight: 600;
   }
+
   /*  Body */
   .text-body-medium {
     font-size: clamp(0.875rem, 1.75vw, 1rem);
   }
   .text-body-small {
-    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+    font-size: clamp(0.875rem, 1.5vw, 0.875rem);
   }
 
   /*  Fluid отступы  */
@@ -133,7 +154,7 @@ body {
   .pt-fluid-3xlarge {
     padding-top: clamp(3rem, 4vw, 4rem);
   }
-    .pt-fluid-4xlarge {
+  .pt-fluid-4xlarge {
     padding-top: clamp(4.75rem, 5vw, 6rem);
   }
 
@@ -291,7 +312,7 @@ body {
   }
 
   /*m top*/
-    .mt-fluid-xs {
+  .mt-fluid-xs {
     margin-top: min(0.25rem, max(0.125rem, 1vw));
   }
   .mt-fluid-small {
@@ -341,8 +362,8 @@ body {
   .gap-fluid-4xlarge {
     gap: clamp(3rem, 5vw, 10rem); /* 48px → 160px*/
   }
-   .gap-fluid-5xlarge {
-    gap: clamp(4rem, 10vw, 15rem); /* 48px → 160px*/
+  .gap-fluid-5xlarge {
+    gap: clamp(4rem, 13vw, 15rem); /* 48px → 160px*/
   }
 
   /*  Fluid border-radius  */
@@ -359,18 +380,13 @@ body {
     border-radius: clamp(0.75rem, 1.5vw, 1rem);
   }
 
-  /* Адаптивная сетка: 4 - 2 - 1 колонка */
-  .grid-cols-fluid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(1fr));
-    gap: var(--gap, clamp(0.5rem, 1.5vw, 1rem));
-  }
-
   .transition {
     @apply duration-500 ease-in-out;
-    }
-    
-    /*
+  }
+
+
+
+  /*
   .element-hover:hover {
     @apply text-[var(--primary-blue-hover)];
   } */

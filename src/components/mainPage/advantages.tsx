@@ -1,12 +1,14 @@
 import { ADVANTAGES } from '@/data/data'
+import ColorWrap from '../layout/colorWrap'
+import { Rock } from '../UI/icons'
 
 export default function ShortInfo() {
-    return <div className='mt-fluid-4xlarge '>
-        <div className="flex max-w-[1400px] ">
-            {ADVANTAGES.map(item => <div className='flex flex-col gap-fluid-small items-center py-fluid-small px-fluid-large border-r-[1px] last:border-r-0' key={item.text}><img style={{ 
-    width: 'clamp(40px, 8vw, 100px)',
-    height: 'auto'
-  }}  className='max-w-[100px]' src={item.image} /><p className='text-center'>{item.text}</p></div>)}
+    return <ColorWrap>
+        <div className='flex flex-col md:flex-row gap-fluid-medium'>
+            {ADVANTAGES.map((item, index) => <div className='flex justify-center px-fluid-large py-fluid-large text-title-large-semiBold text-center border-0 border-[2px] border-[var(--primary-accent)]' key={item.text}><p className='text-center'>{item.text}</p></div>)}
         </div>
-    </div>
+
+    </ColorWrap>
+
 }
+

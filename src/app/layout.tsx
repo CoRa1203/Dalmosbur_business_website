@@ -25,10 +25,9 @@ export default function RootLayout({
 
   return (
     <html lang="en" >
-      <body className={`flex flex-col min-h-screen ${roboto.variable}`}>
-
+      <body className={` ${roboto.variable}`}>
         <Header />
-        <main className="flex justify-center">
+        <main>
           {children}
         </main>
         <Footer />

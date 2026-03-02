@@ -3,16 +3,14 @@ import { Phone } from "./icons"
 
 type PhoneIconProp = {
   children: React.ReactElement
-  text?: string
   info: string
 }
 
-export default function IconText({ text, info, children }: PhoneIconProp) {
+export default function IconText({info, children }: PhoneIconProp) {
   return (
     <div className="flex gap-fluid-small items-center">
       {children}
       <div className="flex flex-col gap">
-        <p className="text-body-small">{text}</p>
         <p>{info}</p>
       </div>
     </div>
