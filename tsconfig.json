@@ -2,6 +2,11 @@
   "compilerOptions": {
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -20,6 +25,9 @@
     ],
     "paths": {
       "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
@@ -29,6 +37,13 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
+<<<<<<< Updated upstream
 , "src/app/projects", "src/data/data.js", "src/data/projects.js"  ],
   "exclude": ["node_modules"]
+=======
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+>>>>>>> Stashed changes
 }
