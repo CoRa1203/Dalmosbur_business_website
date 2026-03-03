@@ -1,9 +1,9 @@
-# <img src="./icons/factory.svg" style="margin-right: 10px;"> Корпоративный веб-сайт ООО «Дальмосбур»
+# <img src="./public/icons/factory.svg" style="margin-right: 10px;"> Корпоративный веб-сайт ООО «Дальмосбур»
 
 <hr style="border: none; height: 4px; background-color: #0F2A4D; width: 100%;">
 
 
-## ![files](./icons/files.svg) О проекте 
+## ![files](./public/icons/files.svg) О проекте 
 
 Данный репозиторий содержит исходный код корпоративного веб-сайта для малого предприятия **ООО «Дальмосбур»**. Компания занимается буровыми и буро-взрывными работами на крупнейших горнодобывающих объектах Российской Федерации.
 
@@ -11,7 +11,7 @@
 
 <hr style="border: none; height: 2px; background-color: #0F2A4D; width: 100%;">
 
-## ![ability](./icons/ability.svg) Основные возможности
+## ![ability](./public/icons/ability.svg) Основные возможности
 
 Сайт реализует следующий функционал согласно Техническому Заданию:
 
@@ -27,7 +27,7 @@
   
  <hr style="border: none; height: 2px; background-color: #0F2A4D; width: 100%;">
 
-## ![ability](./icons/tech.svg) Технологии
+## ![ability](./public/icons/tech.svg) Технологии
 
 В проекте использован следующий стек технологий:
 
@@ -38,7 +38,7 @@
 
 <hr style="border: none; height: 2px; background-color: #0F2A4D; width: 100%;">
 
-## ![ability](./icons/structure.svg) Структура проекта
+## ![ability](./public/icons/structure.svg) Структура проекта
 
 
 ```text
