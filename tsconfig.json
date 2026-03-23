@@ -35,13 +35,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-<<<<<<< Updated upstream
 , "src/app/projects", "src/data/data.js", "src/data/projects.js"  ],
-  "exclude": ["node_modules"]
-=======
-  ],
-  "exclude": [
-    "node_modules"
-  ]
->>>>>>> Stashed changes
+  "exclude": ["node_modules"],
 }
