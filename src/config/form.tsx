@@ -2,8 +2,8 @@ import { Field } from "@/components/UI/form/form";
 
 /**
  * URL для отправки форм на PHP.
- * Укажите NEXT_PUBLIC_FORM_ENDPOINT в .env (например https://ваш-домен.ru/api/send.php).
- * Загрузите php/send.php на хостинг с поддержкой PHP.
+ * Указать NEXT_PUBLIC_FORM_ENDPOINT в .env ( https://домен.ru/api/send.php).
+ * Загрузить php/send.php на хостинг с поддержкой PHP.
  */
 export const formActionUrl =
   typeof process !== "undefined" && process.env?.NEXT_PUBLIC_FORM_ENDPOINT

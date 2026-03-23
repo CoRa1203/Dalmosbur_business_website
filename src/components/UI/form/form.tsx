@@ -122,7 +122,7 @@ export default function Form({
           await onSubmit(values)
         }
       } else {
-        throw new Error('Укажите formAction (URL send.php) или onSubmit')
+        throw new Error('Указать formAction (URL send.php) или onSubmit')
       }
       
       setStatus('success')
