@@ -20,13 +20,16 @@ export interface Field {
 
 interface SimpleFormProps {
   fields: Field[]
-  onSubmit: (data: Record<string, any> | FormData) => Promise<void>
+  /** URL PHP-обработчика (send.php). При указании форма отправляется на него. */
+  formAction?: string
+  onSubmit?: (data: Record<string, any> | FormData) => Promise<void>
   buttonText?: string
   className?: string
 }
 
 export default function Form({
   fields,
+  formAction,
   onSubmit,
   buttonText = 'Отправить',
   className = ''
@@ -71,15 +74,17 @@ export default function Form({
     try {
       const hasFiles = Object.keys(files).length > 0
       
-      if (hasFiles) {
+      if (formAction) {
+        // Отправка на PHP: FormData (браузер сам задаёт Content-Type с boundary)
         const formData = new FormData()
-        
         Object.entries(values).forEach(([key, value]) => {
-          if (value !== undefined && value !== '') {
-            formData.append(key, String(value))
+          if (value === undefined || value === null) return
+          if (typeof value === 'boolean') {
+            if (value) formData.append(key, 'on')
+            return
           }
+          if (value !== '') formData.append(key, String(value))
         })
-        
         Object.entries(files).forEach(([key, file]) => {
           if (Array.isArray(file)) {
             file.forEach(f => formData.append(key, f))
@@ -87,10 +92,37 @@ export default function Form({
             formData.append(key, file)
           }
         })
-        
-        await onSubmit(formData)
+        const response = await fetch(formAction, {
+          method: 'POST',
+          body: formData,
+          headers: { Accept: 'application/json' },
+        })
+        if (!response.ok) {
+          const data = await response.json().catch(() => ({}))
+          const msg = data?.error ?? (Array.isArray(data?.errors) ? data.errors.map((e: { message?: string }) => e.message).filter(Boolean).join(', ') : undefined)
+          throw new Error(msg || 'Не удалось отправить сообщение')
+        }
+      } else if (onSubmit) {
+        if (hasFiles) {
+          const formData = new FormData()
+          Object.entries(values).forEach(([key, value]) => {
+            if (value !== undefined && value !== '') {
+              formData.append(key, String(value))
+            }
+          })
+          Object.entries(files).forEach(([key, file]) => {
+            if (Array.isArray(file)) {
+              file.forEach(f => formData.append(key, f))
+            } else if (file) {
+              formData.append(key, file)
+            }
+          })
+          await onSubmit(formData)
+        } else {
+          await onSubmit(values)
+        }
       } else {
-        await onSubmit(values)
+        throw new Error('Укажите formAction (URL send.php) или onSubmit')
       }
       
       setStatus('success')
@@ -181,9 +213,18 @@ export default function Form({
               )}
               {files[field.name] && (
                 <p className="mt-2 text-sm text-[var(--secondary-green)]">
-                  ✓ {Array.isArray(files[field.name]) 
-                    ? `Выбрано файлов: ${files[field.name].length}` 
-                    : `Файл: ${(files[field.name] as File).name}`}
+                  {(() => {
+                    const selected = files[field.name];
+                    if (!selected) return null;
+                    return (
+                      <>
+                        ✓{" "}
+                        {Array.isArray(selected)
+                          ? `Выбрано файлов: ${selected.length}`
+                          : `Файл: ${selected.name}`}
+                      </>
+                    );
+                  })()}
                 </p>
               )}
             </div>

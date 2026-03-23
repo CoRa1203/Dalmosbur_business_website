@@ -1,5 +1,15 @@
 import { Field } from "@/components/UI/form/form";
 
+/**
+ * URL для отправки форм на PHP.
+ * Укажите NEXT_PUBLIC_FORM_ENDPOINT в .env (например https://ваш-домен.ru/api/send.php).
+ * Загрузите php/send.php на хостинг с поддержкой PHP.
+ */
+export const formActionUrl =
+  typeof process !== "undefined" && process.env?.NEXT_PUBLIC_FORM_ENDPOINT
+    ? process.env.NEXT_PUBLIC_FORM_ENDPOINT
+    : "";
+
 export const contactFormFields: Field[] = [
   {
     name: "name",

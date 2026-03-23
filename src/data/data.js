@@ -15,10 +15,10 @@ export const TEXTS = [
     title: "Проекты/Объекты",
     link: "/projects",
   },
-  // {
-  //   title: "Контакты",
-  //   link: "#",
-  // },
+  {
+    title: "Контакты",
+    link: "/contacts",
+  },
 ];
 
 export const SLIDER_IMAGES = [
