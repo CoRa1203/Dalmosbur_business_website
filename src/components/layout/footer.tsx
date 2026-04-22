@@ -26,7 +26,7 @@ export default function Footer() {
                     <h3 className="text-title-medium-semiBold pb-fluid-large">Контакты</h3>
                     <div className="flex flex-col gap-fluid-medium">
                         <IconText info="+7 982 154 25 45"><Phone /></IconText>
-                        <IconText info="ralina.axatova@mail.ru"><Mail /></IconText>
+                        <IconText info="dalmosbur@gmail.com"><Mail /></IconText>
                         <IconText info="г. Москва, ул. Новый Арбат, 145"><Location /></IconText>
                         <div className="flex gap-fluid-medium">
                             <a href="#" className="transition hover:text-[var(--primary-accent-hover)]">
