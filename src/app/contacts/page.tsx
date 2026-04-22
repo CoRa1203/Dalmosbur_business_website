@@ -88,7 +88,7 @@ export default function ContactsPage() {
                 href="mailto:dalmosbur@gmail.com"
                 className="text-[var(--primary-accent)] hover:text-[var(--primary-accent-hover)] transition"
               >
-                ralina.axatova@mail.ru
+                dalmosbur@gmail.com
               </a>
             </p>
             <p>
