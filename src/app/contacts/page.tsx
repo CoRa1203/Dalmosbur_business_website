@@ -85,7 +85,7 @@ export default function ContactsPage() {
             <p>
               <span className="font-semibold">Email:</span>{" "}
               <a
-                href="mailto:ralina.axatova@mail.ru"
+                href="mailto:dalmosbur@gmail.com"
                 className="text-[var(--primary-accent)] hover:text-[var(--primary-accent-hover)] transition"
               >
                 ralina.axatova@mail.ru
